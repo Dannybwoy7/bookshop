@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshop Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="login-btn">Login</button></li>
+                <li><button id="register-btn">Register</button></li>
+            </ul>
+        </nav>
+
+
+
+
+
+
+
+
+        <style>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+.login-form-container, .register-form-container {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#login-btn, #register-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#login-btn:hover, #register-btn:hover {
+    background-color: #444;
+}
+
+#login-form, #register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form input, #register-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+#login-form input[type="submit"], #register-form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#login-form input[type="submit"]:hover, #register-form input[type="submit"]:hover {
+    background-color: #444;
+}
+        body p{
+        position: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .content{
+    width: 100%;
+    position: absolute;
+    margin-top: 10%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: auto;
+    
+}
+
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+
+}
+.content p{
+    margin: 20px auto; 
+    font-weight: 100;
+    line-height: 25px;
+}
+
+
+
+    
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+    </header>
+    <main>
+        <section class="login-form-container">
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </section>
+        <section class="register-form-container">
+            <form id="register-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <input type="submit" value="Register">
+            </form>
+        </section>
+
+
+
+    </main>
+    <script src="script.js"></script>
+
+    <div class="content">
+        <h1><ul>SAMCHRIS BROWN BOOKS </ul> </h1>
+        
+ 
+        <p>Our bookshop seek to bring to you the most current text to help you and your children to understand the world</p>
+    <div>
+   
+</div>
+
+</body>
+</html>

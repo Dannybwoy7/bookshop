@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Section - Bookshop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Manager Section</h1>
+    <div id="add-book-section">
+        <h2>Add a New Book</h2>
+        <form id="add-book-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required><br>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" required><br>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea><br>
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #4cae4c;
+}
+
+#add-book-section, #delete-book-section, #write-report-section {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+    
+    form label {
+        font-size: 14px;
+    }
+
+    form input, form textarea {
+        font-size: 14px;
+    }
+}
+
+
+
+  </style>
+
+
+
+
+
+
+
+
+
+
+    <div id="delete-book-section">
+        <h2>Delete a Book</h2>
+        <form id="delete-book-form">
+            <label for="book-id">Book ID:</label>
+            <input type="text" id="book-id" name="book-id" required><br>
+            <button type="submit">Delete Book</button>
+        </form>
+    </div>
+
+    <div id="write-report-section">
+        <h2>Write a Report</h2>
+        <form id="write-report-form">
+            <label for="report-title">Report Title:</label>
+            <input type="text" id="report-title" name="report-title" required><br>
+            <label for="report-content">Report Content:</label>
+            <textarea id="report-content" name="report-content"></textarea><br>
+            <button type="submit">Submit Report</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('add-book-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+    const price = document.getElementById('price').value;
+    const description = document.getElementById('description').value;
+
+    fetch('/add-book', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, author, price, description }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Book added successfully!');
+        // Update the view page (if necessary)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+document.getElementById('delete-book-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const bookId = document.getElementById('book-id').value;
+
+    fetch('/delete-book', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: bookId }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Book deleted successfully!');
+        // Update the view page (if necessary)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+document.getElementById('write-report-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const title = document.getElementById('report-title').value;
+    const content = document.getElementById('report-content').value;
+
+    fetch('/write-report', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, content }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Report submitted successfully!');
+        // Update the view page (if necessary)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+    </script>
+
+
+
+</body>
+</html>

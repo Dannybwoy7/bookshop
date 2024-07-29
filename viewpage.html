@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+        }
+        .book-list {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .book-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            background-color: #fff;
+        }
+        .manager-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .manager-section input {
+            padding: 10px;
+            width: 200px;
+        }
+        .manager-section button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Books</h1>
+    <div class="book-list" id="bookList">
+        <!-- Example book items -->
+        <div class="book-item">Book 1</div>
+        <div class="book-item">Book 2</div>
+    </div>
+
+
+<div class="book" books
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="manager-section">
+        <input type="password" id="managerCode" placeholder="Manager Code">
+        <button onclick="accessManagerSection()">Access Manager Section</button>
+    </div>
+    <script>
+        function accessManagerSection() {
+            const code = document.getElementById('managerCode').value;
+            if (code === '1234') {
+                window.location.href = 'manager.html';
+            } else {
+                alert('Invalid code. Access denied.');
+            }
+        }
+    </script>
+</body>
+</html>
